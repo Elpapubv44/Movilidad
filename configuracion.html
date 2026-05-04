@@ -5,37 +5,45 @@
     <title>Configuración - BiciSystem</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="config-page">
-
+<body>
     <nav>
         <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="reservas.html">Reservas</a>
         <a href="stock.html">Stock</a>
+        <a href="eventos.html">Events</a>
+        <a href="historial.html">Historial</a>
         <a href="configuracion.html" class="active">Configuración</a>
     </nav>
 
-    <header style="text-align:center; padding-top:20px;">
-        <h1>Configuración</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Configuración</h1>
+        </header>
 
-    <main>
-        <form id="conf-form">
-            <div class="form-group">
-                <label>Nombre del Sistema</label>
-                <input type="text" value="BiciRed Ciudad">
-            </div>
-            <div class="form-group">
-                <label>Capacidad Máxima</label>
-                <input type="number" value="100">
-            </div>
-            <button type="submit">Guardar Cambios</button>
-        </form>
-    </main>
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+            <form id="conf">
+                <div style="margin-bottom: 1rem;">
+                    <label>Nombre de Usuario</label>
+                    <input type="text" value="BiciUser_01" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label>Idioma</label>
+                    <select style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
+                        <option>Español</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                <button class="btn" style="width:100%">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
 
     <script>
-        document.getElementById('conf-form').onsubmit = (e) => {
+        document.getElementById('conf').onsubmit = (e) => {
             e.preventDefault();
-            alert("¡Configuración guardada!");
-        };
+            alert("Configuración guardada.");
+        }
     </script>
 </body>
 </html>

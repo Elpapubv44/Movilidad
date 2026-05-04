@@ -5,47 +5,52 @@
     <title>Stock - BiciSystem</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="stock-page">
-
+<body>
     <nav>
         <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="reservas.html">Reservas</a>
         <a href="stock.html" class="active">Stock</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="historial.html">Historial</a>
         <a href="configuracion.html">Configuración</a>
     </nav>
 
-    <header>
-        <h1>Control de Stock</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Control de Stock</h1>
+        </header>
 
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>Imagen</th>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody id="stock-body"></tbody>
-        </table>
-    </main>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unidad</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="stock-body"></tbody>
+            </table>
+        </div>
+    </div>
 
     <script>
-        const bikes = [
-            { id: "BK-01", tipo: "Montaña", img: "https://via.placeholder.com/50?text=B1" },
-            { id: "BK-02", tipo: "Urbana", img: "https://via.placeholder.com/50?text=B2" },
-            { id: "BK-03", tipo: "Eléctrica", img: "https://via.placeholder.com/50?text=B3" }
+        const inventory = [
+            { id: "BK-01", tipo: "Montaña", estado: "Disponible" },
+            { id: "BK-02", tipo: "Urbana", estado: "En Reparación" },
+            { id: "BK-03", tipo: "Eléctrica", estado: "Disponible" }
         ];
 
         const body = document.getElementById('stock-body');
-        bikes.forEach(b => {
+        inventory.forEach(item => {
             body.innerHTML += `
                 <tr>
-                    <td><img src="${b.img}"></td>
-                    <td>${b.id}</td>
-                    <td>${b.tipo}</td>
-                    <td><a href="perfil.html" class="btn-view">Ver Detalle</a></td>
+                    <td style="font-weight:bold;">${item.id}</td>
+                    <td>${item.tipo}</td>
+                    <td><span class="badge ${item.estado === 'Disponible' ? 'available' : 'unavailable'}">${item.estado}</span></td>
+                    <td><a href="perfil.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Gestionar</a></td>
                 </tr>
             `;
         });

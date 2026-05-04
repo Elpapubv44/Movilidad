@@ -5,26 +5,31 @@
     <title>Detalle - BiciSystem</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="perfil-page">
-
+<body>
     <nav>
         <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html" class="active">Explorar</a>
+        <a href="reservas.html">Reservas</a>
         <a href="stock.html">Stock</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="historial.html">Historial</a>
         <a href="configuracion.html">Configuración</a>
     </nav>
 
-    <main>
-        <div class="card">
-            <img src="https://via.placeholder.com/400?text=Bicicleta" alt="Bici">
-            <div class="info">
-                <h2>Modelo City Pro X1</h2>
-                <p><strong>ID:</strong> EB-2024-089</p>
-                <p><strong>Tipo:</strong> Eléctrica</p>
-                <p><strong>Batería:</strong> <span class="status">85%</span></p>
+    <div class="container">
+        <div class="card" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77891?w=600" style="width:100%; max-width:400px; border-radius:8px; object-fit:cover;">
+            <div style="flex:1; min-width:300px;">
+                <h1 style="text-align: left;">Modelo City Pro X1</h1>
+                <p style="color: #64748b; margin: 1rem 0;">ID: EB-2024-089</p>
+                <p>Tipo: <strong>Eléctrica</strong></p>
+                <p>Batería: <span style="color: var(--secondary); font-weight: bold;">85%</span></p>
                 <br>
-                <a href="stock.html" style="color: #2c3e50;">← Volver al stock</a>
+                <a href="reservas.html" class="btn">Reservar Ahora</a>
+                <br><br>
+                <a href="explorar.html" style="color: grey; text-decoration: none;">&larr; Volver</a>
             </div>
         </div>
-    </main>
+    </div>
 </body>
 </html>

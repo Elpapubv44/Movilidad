@@ -2,42 +2,58 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - BiciSystem</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dashboard-page">
-
+<body>
     <nav>
         <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="reservas.html">Reservas</a>
         <a href="stock.html">Stock</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="historial.html">Historial</a>
         <a href="configuracion.html">Configuración</a>
     </nav>
 
-    <header>
-        <h1>Dashboard de Métricas</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Dashboard de Métricas</h1>
+            <p style="color: #64748b;">Resumen operacional del sistema</p>
+        </header>
 
-    <main class="metrics-grid">
-        <div class="card">
-            <h3>Bicicletas</h3>
-            <div id="val-bikes" class="metric-value">--</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="card" style="text-align: center;">
+                <h3 style="color: #64748b; font-size: 0.9rem;">Bicicletas</h3>
+                <div id="val-bikes" style="font-size: 2.5rem; font-weight: 800; color: var(--secondary);">0</div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <h3 style="color: #64748b; font-size: 0.9rem;">Reservas</h3>
+                <div id="val-res" style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">0</div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <h3 style="color: #64748b; font-size: 0.9rem;">Usuarios</h3>
+                <div id="val-users" style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">0</div>
+            </div>
         </div>
-        <div class="card">
-            <h3>Reservas</h3>
-            <div id="val-reservations" class="metric-value">--</div>
-        </div>
-        <div class="card">
-            <h3>Usuarios</h3>
-            <div id="val-users" class="metric-value">--</div>
-        </div>
-    </main>
+    </div>
 
     <script>
+        // JS Básico para simular carga de datos
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('val-bikes').textContent = "45";
-            document.getElementById('val-reservations').textContent = "12";
-            document.getElementById('val-users').textContent = "184";
+            const animate = (id, target) => {
+                let current = 0;
+                const interval = setInterval(() => {
+                    if (current >= target) clearInterval(interval);
+                    document.getElementById(id).textContent = current;
+                    current += Math.ceil(target / 20);
+                    if (current > target) current = target;
+                }, 30);
+            };
+
+            animate('val-bikes', 45);
+            animate('val-res', 12);
+            animate('val-users', 184);
         });
     </script>
 </body>
