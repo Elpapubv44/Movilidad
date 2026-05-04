@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos - BiciSystem</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+        .day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: #f1f5f9; border-radius: 4px; font-size: 0.8rem; }
+        .has-event { border: 2px solid var(--accent); font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="stock.html">Stock</a>
+        <a href="eventos.html" class="active">Eventos</a>
+        <a href="historial.html">Historial</a>
+        <a href="configuracion.html">Configuración</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Eventos y Mantenimiento</h1>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem;">
+            <div class="card">
+                <h3>Junio 2024</h3>
+                <br>
+                <div class="calendar" id="calendar"></div>
+            </div>
+            
+            <div class="card" style="border-left: 4px solid var(--accent);">
+                <h4>Próximos</h4>
+                <p style="font-size: 0.9rem; margin-top: 10px;">• 15 Jun: Mantenimiento Estación Norte</p>
+                <p style="font-size: 0.9rem; margin-top: 10px;">• 20 Jun: Rodada Nocturna</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cal = document.getElementById('calendar');
+        for(let i=1; i<=30; i++) {
+            const isEvent = [15, 20].includes(i);
+            cal.innerHTML += `<div class="day ${isEvent ? 'has-event' : ''}">${i}</div>`;
+        }
+    </script>
+</body>
+</html>
