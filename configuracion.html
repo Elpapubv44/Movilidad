@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuración - BiciSystem</title>
+    <style>
+        :root { --primary: #2c3e50; --secondary: #27ae60; --bg: #f4f4f4; --white: #ffffff; }
+        body { font-family: sans-serif; background: var(--bg); margin: 0; }
+        
+        nav { background: var(--primary); padding: 1rem; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; padding: 5px 10px; }
+        nav a:hover, nav a.active { background: var(--secondary); border-radius: 4px; }
+
+        main { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+        input { padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: var(--secondary); color: white; border: none; padding: 12px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+    </style>
+</head>
+<body class="config-page">
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stock.html">Stock</a>
+        <a href="configuracion.html" class="active">Configuración</a>
+    </nav>
+
+    <header style="text-align:center; padding-top:20px;">
+        <h1>Configuración</h1>
+    </header>
+
+    <main>
+        <form id="conf-form">
+            <div class="form-group">
+                <label>Nombre del Sistema</label>
+                <input type="text" value="BiciRed Ciudad">
+            </div>
+            <div class="form-group">
+                <label>Capacidad Máxima</label>
+                <input type="number" value="100">
+            </div>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('conf-form').onsubmit = (e) => {
+            e.preventDefault();
+            alert("¡Configuración guardada!");
+        };
+    </script>
+</body>
+</html>

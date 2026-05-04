@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle - BiciSystem</title>
+    <style>
+        :root { --primary: #2c3e50; --secondary: #27ae60; --bg: #f4f4f4; --white: #ffffff; }
+        body { font-family: sans-serif; background: var(--bg); margin: 0; }
+        
+        nav { background: var(--primary); padding: 1rem; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; padding: 5px 10px; }
+        
+        main { display: flex; justify-content: center; padding: 50px; }
+        .card { background: white; display: flex; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 600px; }
+        .info { padding: 30px; }
+        img { width: 250px; object-fit: cover; background: #eee; }
+        .status { color: var(--secondary); font-weight: bold; }
+    </style>
+</head>
+<body class="perfil-page">
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stock.html">Stock</a>
+        <a href="configuracion.html">Configuración</a>
+    </nav>
+
+    <main>
+        <div class="card">
+            <img src="https://via.placeholder.com/400?text=Bicicleta" alt="Bici">
+            <div class="info">
+                <h2>Modelo City Pro X1</h2>
+                <p><strong>ID:</strong> EB-2024-089</p>
+                <p><strong>Tipo:</strong> Eléctrica</p>
+                <p><strong>Batería:</strong> <span class="status">85%</span></p>
+                <br>
+                <a href="stock.html" style="color: #2c3e50;">← Volver al stock</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

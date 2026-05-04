@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BiciSystem</title>
+    <style>
+        /* GLOBAL STYLES */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #27ae60;
+            --bg: #f4f4f4;
+            --white: #ffffff;
+        }
+        body { font-family: sans-serif; background: var(--bg); margin: 0; }
+        
+        /* NAVIGATION BAR */
+        nav {
+            background: var(--primary);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        nav a:hover, nav a.active {
+            background: var(--secondary);
+        }
+
+        header { text-align: center; padding: 2rem; color: var(--primary); }
+        
+        /* DASHBOARD SPECIFIC */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .metric-value { font-size: 2rem; font-weight: bold; color: var(--secondary); }
+    </style>
+</head>
+<body class="dashboard-page">
+
+    <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="stock.html">Stock</a>
+        <a href="configuracion.html">Configuración</a>
+    </nav>
+
+    <header>
+        <h1>Dashboard de Métricas</h1>
+    </header>
+
+    <main class="metrics-grid">
+        <div class="card">
+            <h3>Bicicletas</h3>
+            <div id="val-bikes" class="metric-value">--</div>
+        </div>
+        <div class="card">
+            <h3>Reservas</h3>
+            <div id="val-reservations" class="metric-value">--</div>
+        </div>
+        <div class="card">
+            <h3>Usuarios</h3>
+            <div id="val-users" class="metric-value">--</div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('val-bikes').textContent = "45";
+            document.getElementById('val-reservations').textContent = "12";
+            document.getElementById('val-users').textContent = "184";
+        });
+    </script>
+</body>
+</html>
