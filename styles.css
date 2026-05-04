@@ -1,0 +1,180 @@
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+:root {
+    --primary: #2c3e50;
+    --secondary: #27ae60;
+    --bg: #f4f4f4;
+    --white: #ffffff;
+}
+
+/* =========================
+   RESET / BASE
+========================= */
+body {
+    font-family: sans-serif;
+    background: var(--bg);
+    margin: 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+    background: var(--primary);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--secondary);
+    border-radius: 4px;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    text-align: center;
+    padding: 2rem;
+    color: var(--primary);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+/* =========================
+   CARDS (USADO EN VARIAS VISTAS)
+========================= */
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Card específica (perfil) */
+.perfil-page .card {
+    display: flex;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.info {
+    padding: 30px;
+}
+
+/* =========================
+   PERFIL
+========================= */
+.perfil-page main {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.perfil-page img {
+    width: 250px;
+    object-fit: cover;
+    background: #eee;
+}
+
+.status {
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* =========================
+   STOCK
+========================= */
+.stock-page main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+.stock-page img {
+    width: 50px;
+    border-radius: 4px;
+}
+
+.btn-view {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   CONFIGURACIÓN
+========================= */
+.config-page main {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
