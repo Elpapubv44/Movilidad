@@ -1,0 +1,89 @@
+============================================================
+           GUIA DE USUARIO - BICISYSTEM (V1.0)
+============================================================
+
+¡Bienvenido a BiciSystem! Esta aplicación está diseñada para
+gestionar de manera eficiente el uso, reserva y mantenimiento
+de bicicletas urbanas.
+
+A continuación, se detalla el funcionamiento de cada sección:
+
+1. DASHBOARD (Panel Principal)
+------------------------------------------------------------
+Es tu centro de control. Aquí puedes ver de un vistazo:
+- Bicicletas Totales: Cantidad de unidades en el sistema.
+- Reservas Hoy: Cuántas personas han reservado para hoy.
+- Usuarios Activos: Cantidad de usuarios registrados.
+* Nota: Los valores tienen una animación de carga al entrar.
+
+2. EXPLORAR (Catálogo)
+------------------------------------------------------------
+Muestra todas las bicicletas disponibles en el sistema con
+fotos y descripciones.
+- Cada tarjeta muestra el tipo (Urbana, Eléctrica, etc.) y
+  un indicador visual de "Disponible" o "No Disponible".
+- Haz clic en "Ver Detalles" para ir a la ficha técnica.
+
+3. DETALLE DE BICICLETA (Perfil)
+------------------------------------------------------------
+Muestra información específica de una unidad:
+- ID único de la bicicleta.
+- Nivel de batería (para modelos eléctricos).
+- Ubicación actual (Estación).
+- Botón directo para realizar una reserva de esa unidad.
+
+4. RESERVAS (Nueva Reserva)
+------------------------------------------------------------
+Permite asegurar una bicicleta para un horario específico.
+- Selecciona el tipo de bicicleta.
+- Elige la fecha y hora de retiro.
+- Al confirmar, el sistema simula el envío de un código QR
+  para el desbloqueo en la estación.
+
+5. STOCK (Gestión de Inventario)
+------------------------------------------------------------
+Diseñado para administradores.
+- Lista todas las unidades físicas.
+- Permite ver el estado de salud de cada bicicleta.
+- Enlace "Gestionar" para acceder a reparaciones o cambios.
+
+6. EVENTOS (Calendario)
+------------------------------------------------------------
+Muestra un calendario mensual con hitos importantes:
+- Mantenimientos programados (puntos naranjas).
+- Eventos de la comunidad/Rodadas (puntos azules).
+- Unidades fuera de servicio (puntos rojos).
+
+7. HISTORIAL (Registros)
+------------------------------------------------------------
+Permite auditar los viajes realizados.
+- Tabla con ID de viaje, usuario y estado final (Completado
+  o Cancelado).
+- Incluye un buscador en tiempo real por ID o usuario.
+
+8. CONFIGURACION
+------------------------------------------------------------
+Ajustes personales del sistema:
+- Cambiar el nombre del sistema mostrado.
+- Ajustar capacidad de las estaciones.
+- Cambiar el idioma de la interfaz.
+
+============================================================
+                NOTAS TECNICAS Y ARCHIVOS
+============================================================
+
+¿Cómo ejecutar la aplicación?
+Simplemente abre el archivo "dashboard.html" en tu navegador
+favorito (Chrome, Firefox, Edge, Safari).
+
+¿Puedo borrar los archivos .ts o .json?
+SÍ. Los archivos de código que te entregué (HTML/CSS/JS) son
+estándar y "Vanilla" (puros). No dependen de TypeScript ni de
+configuraciones JSON para funcionar en una carpeta local.
+Solo necesitas:
+- Los 8 archivos .html
+- El archivo styles.css
+
+============================================================
+        BiciSystem - Movilidad Urbana Inteligente
+============================================================

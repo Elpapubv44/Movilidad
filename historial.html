@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial - BiciSystem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="stock.html">Stock</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="historial.html" class="active">Historial</a>
+        <a href="configuracion.html">Configuración</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Historial de Actividad</h1>
+        </header>
+
+        <div class="card" style="padding: 0;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Bicicleta</th>
+                            <th>Acción</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-rows"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const history = [
+            { date: "2024-06-01", bike: "EB-089", action: "Reserva", status: "Completado" },
+            { date: "2024-06-03", bike: "BK-042", action: "Alquiler", status: "En curso" }
+        ];
+
+        const rows = document.getElementById('history-rows');
+        history.forEach(h => {
+            rows.innerHTML += `
+                <tr>
+                    <td>${h.date}</td>
+                    <td>${h.bike}</td>
+                    <td>${h.action}</td>
+                    <td><span class="badge available">${h.status}</span></td>
+                </tr>
+            `;
+        });
+    </script>
+</body>
+</html>

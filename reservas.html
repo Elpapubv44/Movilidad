@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas - BiciSystem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="reservas.html" class="active">Reservas</a>
+        <a href="stock.html">Stock</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="historial.html">Historial</a>
+        <a href="configuracion.html">Configuración</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Nueva Reserva</h1>
+        </header>
+
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <form id="res-form">
+                <div style="margin-bottom: 1rem;">
+                    <label>Bicicleta</label>
+                    <select id="sel-bike" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
+                        <option>Urbana X1</option>
+                        <option>Electra E-2</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label>Fecha y Hora</label>
+                    <input type="datetime-local" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Confirmar Reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('res-form').onsubmit = (e) => {
+            e.preventDefault();
+            alert("¡Reserva creada! Recibirás un correo de confirmación.");
+            window.location.href = "historial.html";
+        };
+    </script>
+</body>
+</html>

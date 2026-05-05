@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Explorar - BiciSystem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="explorar.html" class="active">Explorar</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="stock.html">Stock</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="historial.html">Historial</a>
+        <a href="configuracion.html">Configuración</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Explorar Bicicletas</h1>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;" id="grid"></div>
+    </div>
+
+    <script>
+        const bikes = [
+            { id: 1, tipo: "Urbana Clásica", img: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400", estado: "Disponible" },
+            { id: 2, tipo: "Eléctrica E-200", img: "https://images.unsplash.com/photo-1571068316344-75bc76f77891?w=400", estado: "Disponible" },
+            { id: 3, tipo: "Montaña Pro", img: "https://images.unsplash.com/photo-1532298229144-0ee0c9e9ad28?w=400", estado: "No Disponible" },
+            { id: 4, tipo: "Plegable City", img: "https://images.unsplash.com/photo-1593433551529-5926da13010b?w=400", estado: "Disponible" }
+        ];
+
+        const grid = document.getElementById('grid');
+        bikes.forEach(bike => {
+            const badgeClass = bike.estado === "Disponible" ? "available" : "unavailable";
+            grid.innerHTML += `
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <img src="${bike.img}" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 0.5rem;">${bike.tipo}</h3>
+                        <span class="badge ${badgeClass}">${bike.estado}</span>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="perfil.html" style="color: var(--accent); text-decoration: none; font-weight: bold;">Ver Detalles &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
